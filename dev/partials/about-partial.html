@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <md-content layout-padding>
 <div>
 <div ng-controller="AboutController" layout="column" ng-cloak class="md-whiteframe-z2">
@@ -90,3 +91,97 @@
 
 </div>
 </md-content>
+=======
+<md-content layout-padding>
+<div>
+<div ng-controller="AboutController" layout="column" ng-cloak class="md-whiteframe-z2">
+
+  <md-toolbar class="md-theme-light">
+  <h2 class="md-toolbar-tools">
+    <span>Add a Game</span>
+  </h2>
+</md-toolbar>
+
+
+<md-content layout-padding>
+<div>
+  <form name="gameForm" ng-submit="submit()" ng-controller="AboutController">
+
+ <div layout="column">
+
+    <md-input-container flex="100">
+    <label>Title</label>
+
+    <input type="text" ng-model="game.title">
+  </md-input-container>
+
+</div>
+
+<div layout="row">
+  <md-input-container flex="50">
+  <label>Console</label>
+         
+          <md-select ng-model="game.console" >
+          <md-option ng-repeat="console in consoles" value="{{console.name}}">
+                {{console.name}}
+          </md-option>  
+
+          </md-select>
+</md-input-container>
+
+<md-input-container flex="50">
+<label>Year</label>
+
+<input type="number" ng-model="game.year">
+</md-input-container>
+</div>
+
+
+<div layout="row">
+  <md-input-container flex="50">
+  <label>Completed</label>
+
+          <md-select ng-model="game.completed" >
+          <md-option ng-repeat="state in statesCompleted" value="{{state.option}}">
+                {{state.option}}
+          </md-option>  
+
+          </md-select>
+</md-input-container>
+
+<md-input-container flex="50" ng-if="game.completed === 'Yes'" >
+<label>Date of Completion</label>
+    <md-datepicker ng-model="game.dateCompletion" md-placeholder="Enter date"></md-datepicker>
+</md-input-container>
+</div>
+
+<md-input-container class="md-block">
+<label>Personal Notes</label>
+<!-- <textarea ng-model="user.notes" md-maxlength="150" rows="5" md-select-on-focus></textarea> -->
+<textarea ng-model="game.notes" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+</md-input-container>
+
+ 
+ <div layout="column">
+
+<section layout="row" layout-sm="column" layout-align="center center" layout-wrap >
+  <md-button class="md-raised md-primary" type="submit" id="submit" value="Submit">Add</md-button>
+</section>
+      
+</div>
+
+</form>
+</div>
+</md-content>
+
+
+
+
+
+
+</div>
+
+
+</div>
+</md-content>
+>>>>>>> 8517e7dc0a1b0c9a4c686361fc4536d2cbb85376
