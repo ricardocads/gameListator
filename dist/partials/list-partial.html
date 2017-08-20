@@ -1,0 +1,209 @@
+<md-content layout-padding>
+<div>
+
+<div ng-controller="ListController as main" layout="row">
+  <div flex layout="column" role="main" class="md-whiteframe-z2">
+    <md-toolbar layout="row">
+      <div class="md-toolbar-tools">
+        <md-button ng-click="main.toggleLeft()" hide-gt-md aria-label="Open Menu">
+          <ng-md-icon icon="menu"></ng-md-icon>
+        </md-button>
+        <h2 class="header show">Games</h2>
+        <span flex></span>
+        <form class="search-box">
+          <input class="search-box-input" type="text" required="required" ng-model="search.title" >
+          <button type="reset" class="delete"></button>
+        </form>
+      </div>
+    </md-toolbar>
+
+    <md-list>
+
+      <md-list-item class="md-3-line" ng-repeat="item in todos | filter: search" style="padding-left: 16px; padding-bottom: 10px; padding-top: 10px;">
+        <div class="md-list-item-text">
+            <h3>Title: {{item.title}}</h3>
+            <h4>Console: {{item.console}}</h4>
+            <p>Year: {{item.year}} ({{item.yearsold}} years old)</p>
+            <p>Completed: {{item.completed}}</p>
+            <p>Date of completion: {{item.dateCompletion}}</p>
+            <p>Personal Notes: {{item.notes}}</p>
+        </div>
+        <section layout="column" layout-sm="column" layout-align="center center"  style="padding-top: 1%;">
+          <md-button class="md-raised md-primary" ng-click="editGame(item.id)">Edit</md-button>
+          <md-button class="md-raised md-warn" ng-click="removeGame(item.id)">Remove</md-button>
+        </section>
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+
+    </md-list>
+
+</div>
+</div>
+
+</div>
+  </md-content>
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=RobotoDraft&lang=en);
+/* Demo Page Styles
+----------------------------*/
+.md-button {
+  min-width: 44px;
+}
+
+*:focus {
+  outline: none;
+}
+
+a:hover {
+  cursor:pointer;
+}
+
+ng-md-icon {
+  fill: #fff;
+}
+
+ng-md-icon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* Search Bar
+----------------------------*/
+/* Initial Styling
+-----------------*/
+/* Container */
+.search-box {
+  width: 100%;
+  height: 35px;
+  position: relative;
+}
+/* Input */
+.search-box input {
+  background: none;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.87);
+  color: rgba(255,255,255,0.87);
+  font-size: 16px;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  border-radius: 100%;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 8px;
+  cursor: pointer;
+  transition: border-radius 0.4s ease-in-out,
+              width 0.4s ease-in-out,
+              height 0.4s ease-in-out,
+              padding 0.2s ease-in-out,
+              right 0.4s ease-in-out;
+  transition-delay: 0.4s, 0s, 0s, 0.4s, 0s;
+}
+
+/* Button */
+.delete {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  pointer-events: none;
+  height: 35px;
+  width: 35px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.delete:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: rgba(255,255,255,0.87);
+  width: 1px;
+  height: 15px;
+  transform: translate(10px, 6px)
+             translate(-50%, -50%)
+             rotate(-45deg);
+  transition: transform 0.2s;
+  transition-delay: 0.4s;
+}
+
+.delete:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: rgba(255,255,255,0.87);
+  width: 1px;
+  height: 15px;
+  transform: translate(-50%, -50%)
+             rotate(-45deg)
+             scale(0);
+  transition: transform 0.3s;
+  transition-delay: 0.2s;
+}
+
+/* Trigger for clicking the search box
+-------------------------------------*/
+/* Header */
+.header.show {
+  max-width: 100%;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out, width 0s;
+  transition-delay: 0s, 0.3s;
+}
+.header.hide {
+  max-width: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, width 0s;
+  transition-delay: 0s, 0.3s;
+}
+/* Input */
+.search-box input:focus,
+.search-box input:valid {
+  width: 100%;
+  height: 35px;
+  right: 0;
+  padding: 0 43px 0 8px;
+  border-radius: 0;
+  cursor: text;
+  transition-delay: 0s, 0.4s, 0.4s, 0.4s, 0.4s;
+}
+/* Button */
+.search-box input:focus + .delete,
+.search-box input:valid + .delete {
+  pointer-events: all;
+}
+
+.search-box input:focus + .delete:before,
+.search-box input:valid + .delete:before {
+  transform: translate(0px, 0px)
+             translate(-50%, -50%)
+             rotate(-45deg);
+}
+
+.search-box input:focus + .delete:after,
+.search-box input:valid + .delete:after {
+  transform: translate(-50%, -50%)
+             rotate(45deg)
+             scale(1);
+  transition-delay: 0.5s;
+}
+</style>
