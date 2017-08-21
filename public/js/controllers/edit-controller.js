@@ -22,7 +22,6 @@
 				notes: ""
 			};
 
-
 			var arrayTemp;
 			firebase.database().ref('/games/' +  $stateParams.id ).once('value').then(function(snapshot) {
 				var arrayTemp = {
@@ -41,8 +40,6 @@
 				});
 			});
 			
-			
-
 
 			$scope.updateGame = function() {
 				console.log("entrou");

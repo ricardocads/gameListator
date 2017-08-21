@@ -40,7 +40,6 @@
 				if (gameData.completed == "No") gameData.dateCompletion = '';
 
 				var newGameKey = firebase.database().ref().child('games').push().key;
-
 				gameData.id = newGameKey;
 
 				var updates = {};
@@ -49,8 +48,6 @@
 				firebase.database().ref().update(updates);
 				window.location.href = '#!/list';
 			};
-
-
 
 		}]);
 app.config(function($compileProvider) {

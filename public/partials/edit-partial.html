@@ -1,44 +1,44 @@
 <md-content layout-padding>
 <div>
-<div ng-controller="EditController" layout="column" ng-cloak class="md-whiteframe-z2">
+  <div ng-controller="EditController" layout="column" ng-cloak class="md-whiteframe-z2">
 
-  <md-toolbar class="md-theme-light">
-  <h2 class="md-toolbar-tools">
-    <span>Edit a Game</span>
-  </h2>
-</md-toolbar>
+    <md-toolbar class="md-theme-light">
+    <h2 class="md-toolbar-tools">
+      <span>Edit a Game</span>
+    </h2>
+  </md-toolbar>
 
 
-<md-content layout-padding>
-<div>
-  <form name="gameForm" ng-submit="updateGame()" ng-controller="EditController">
+  <md-content layout-padding>
+  <div>
+    <form name="gameForm" ng-submit="updateGame()" ng-controller="EditController">
 
- <div layout="column">
+     <div layout="column">
 
-    <md-input-container flex="100">
-    <label>Title</label>
+      <md-input-container flex="100">
+      <label>Title</label>
 
-    <input type="text" ng-model="game.title">
-  </md-input-container>
+      <input type="text" ng-model="game.title">
+    </md-input-container>
 
-</div>
+  </div>
 
-<div layout="row">
-  <md-input-container flex="50">
-  <label>Console</label>
-         
-          <md-select ng-model="game.console" >
-          <md-option ng-repeat="console in consoles" value="{{console.name}}">
-                {{console.name}}
-          </md-option>  
+  <div layout="row">
+    <md-input-container flex="50">
+    <label>Console</label>
+    
+    <md-select ng-model="game.console" >
+    <md-option ng-repeat="console in consoles" value="{{console.name}}">
+    {{console.name}}
+  </md-option>  
 
-          </md-select>
+</md-select>
 </md-input-container>
 
 <md-input-container flex="50">
 <label>Year</label>
 
-<input type="number" ng-model="game.year" > <!--value="{{game.year}}"-->
+<input type="number" ng-model="game.year" >
 </md-input-container>
 </div>
 
@@ -46,48 +46,38 @@
 <div layout="row">
   <md-input-container flex="50">
   <label>Completed</label>
-
-          <md-select ng-model="game.completed" >
-          <md-option ng-repeat="state in statesCompleted" value="{{state.option}}">
-                {{state.option}}
-          </md-option>  
-
-          </md-select>
+  <md-select ng-model="game.completed" >
+  <md-option ng-repeat="state in statesCompleted" value="{{state.option}}">
+  {{state.option}}
+</md-option>  
+</md-select>
 </md-input-container>
 
 <md-input-container flex="50" ng-if="game.completed === 'Yes'" >
 <label>Date of Completion</label>
-    <md-datepicker ng-model="game.dateCompletion" md-placeholder="Enter date" value="{{game.dateCompletion}}"></md-datepicker>
+<md-datepicker ng-model="game.dateCompletion" md-placeholder="Enter date" value="{{game.dateCompletion}}"></md-datepicker>
 </md-input-container>
 </div>
 
 <md-input-container class="md-block">
 <label>Personal Notes</label>
-<!-- <textarea ng-model="user.notes" md-maxlength="150" rows="5" md-select-on-focus></textarea> -->
 <textarea ng-model="game.notes" rows="2" md-select-on-focus value="{{game.notes}}"></textarea>
 </md-input-container>
 
- 
- <div layout="column">
 
-<section layout="row" layout-sm="column" layout-align="center center" layout-wrap >
-  <md-button class="md-raised md-button md-ink-ripple" ng-click="cancelAction()">Cancel</md-button>
-  <md-button class="md-raised md-primary" type="submit" id="update" value="Submit">Update</md-button>
-</section>
-      
+<div layout="column">
+
+  <section layout="row" layout-sm="column" layout-align="center center" layout-wrap >
+    <md-button class="md-raised md-button md-ink-ripple" ng-click="cancelAction()">Cancel</md-button>
+    <md-button class="md-raised md-primary" type="submit" id="update" value="Submit">Update</md-button>
+  </section>
+  
 </div>
 
 </form>
 </div>
 </md-content>
 
-
-
-
-
-
 </div>
-
-
 </div>
 </md-content>

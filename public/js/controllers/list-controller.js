@@ -39,8 +39,8 @@
 
 	$scope.customFilter = function (game) {
 		return !$scope.search ||
-			game.title === $scope.search ||
-			game.console === $scope.search;
+		game.title === $scope.search ||
+		game.console === $scope.search;
 	}
 
 	//----------ENGINE SEARCH BAR-------------
