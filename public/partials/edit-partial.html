@@ -11,14 +11,14 @@
 
 <md-content layout-padding>
 <div>
-  <form name="gameForm" ng-submit="submit()" ng-controller="EditController">
+  <form name="gameForm" ng-submit="updateGame()" ng-controller="EditController">
 
  <div layout="column">
 
     <md-input-container flex="100">
     <label>Title</label>
 
-    <input type="text"  ng-model="game.title" value="{{game.title}}">
+    <input type="text" ng-model="game.title">
   </md-input-container>
 
 </div>
@@ -28,7 +28,7 @@
   <label>Console</label>
          
           <md-select ng-model="game.console" >
-          <md-option ng-repeat="console in consoles" >
+          <md-option ng-repeat="console in consoles" value="{{console.name}}">
                 {{console.name}}
           </md-option>  
 
@@ -48,7 +48,7 @@
   <label>Completed</label>
 
           <md-select ng-model="game.completed" >
-          <md-option ng-repeat="state in statesCompleted">
+          <md-option ng-repeat="state in statesCompleted" value="{{state.option}}">
                 {{state.option}}
           </md-option>  
 
@@ -64,14 +64,14 @@
 <md-input-container class="md-block">
 <label>Personal Notes</label>
 <!-- <textarea ng-model="user.notes" md-maxlength="150" rows="5" md-select-on-focus></textarea> -->
-<textarea ng-model="game.notes" md-maxlength="150" rows="5" md-select-on-focus value="{{game.notes}}"></textarea>
+<textarea ng-model="game.notes" rows="2" md-select-on-focus value="{{game.notes}}"></textarea>
 </md-input-container>
 
  
  <div layout="column">
 
 <section layout="row" layout-sm="column" layout-align="center center" layout-wrap >
-  <md-button class="md-raised md-primary" type="submit" id="submit" value="Submit">Update</md-button>
+  <md-button class="md-raised md-primary" type="submit" id="update" value="Submit">Update</md-button>
 </section>
       
 </div>
