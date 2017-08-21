@@ -42,13 +42,19 @@
  //         }
 	// }
 
+	$scope.customFilter = function (game) {
+		return !$scope.search ||
+			game.title === $scope.search ||
+			game.console === $scope.search;
+	}
+
 	//----------ENGINE SEARCH BAR-------------
 
 	//------------LISTING GAMES---------------
 
 	$scope.todos = [];
-	var arraytempReverse = [];
 	firebase.database().ref('/games/').orderByChild('dateCompletion').once('value').then(function(snapshot) {
+		var arraytempReverse = [];
 		snapshot.forEach(function(gameSnapshot) {
 			var game = gameSnapshot.val();
 			var temp = {
@@ -62,19 +68,25 @@
 				dateCompletion: game.dateCompletion,
 				notes: game.notes
 			};
-       		arraytempReverse.unshift(temp);
+			arraytempReverse.unshift(temp);
+		});
+
+		$scope.$apply(function () {
+			$scope.todos = arraytempReverse;
 		});
 	});
-	$scope.todos = arraytempReverse;
 
 	//------------LISTING GAMES---------------
 
 	//-------------LIST ACTIONS---------------
 
 	$scope.removeGame = function(name) {
-		console.log('entrou');
 		firebase.database().ref('/games/').child(name).remove();
-		window.location.reload()
+		window.location.reload();
+	}	
+
+	$scope.editGame = function(name) {
+		window.location.href = '#!/edit/'+name;
 	}	
 
 	//-------------LIST ACTIONS---------------

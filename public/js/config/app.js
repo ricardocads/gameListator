@@ -5,10 +5,10 @@ var gameListator = angular.module('gameListator', ['ngMaterial', 'ngAnimate', 'n
 
         $urlRouterProvider.otherwise('/');
 
-        $stateProvider.state('edit/:id', {
-        url: '/edit/',
+        $stateProvider.state('edit', {
+        url: '/edit/:id',
         templateUrl: 'partials/edit-partial.html',
-        controller: 'editController'
+        controller: 'EditController'
     })
 
     .state('list', {
