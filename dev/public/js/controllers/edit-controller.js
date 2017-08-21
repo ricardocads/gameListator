@@ -67,6 +67,10 @@
 				window.location = "http://localhost:3000/#!/";
 			}
 
+			$scope.cancelAction = function() {
+				window.location.href = '#!/list';
+			};
+
 
 		}]);
 })(gameListator);

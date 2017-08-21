@@ -1,16 +1,86 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 120 120">
-  <defs>
-    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-      <feOffset result="offOut" in="SourceAlpha" dx="0" dy="0"></feOffset>
-      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="3"></feGaussianBlur>
-      <feComponentTransfer in="blurOut" result="opacityOut">
-        <feFuncA type="linear" slope="0.5"></feFuncA>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="-10 -10 120 120"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="angular-logo.svg">
+  <metadata
+     id="metadata27">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="706"
+     id="namedview25"
+     showgrid="false"
+     inkscape:zoom="1.9666667"
+     inkscape:cx="162.17092"
+     inkscape:cy="5.7371954"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4">
+    <filter
+       id="shadow"
+       x="-50%"
+       y="-50%"
+       width="200%"
+       height="200%">
+      <feOffset
+         result="offOut"
+         in="SourceAlpha"
+         dx="0"
+         dy="0"
+         id="feOffset7" />
+      <feGaussianBlur
+         result="blurOut"
+         in="offOut"
+         stdDeviation="3"
+         id="feGaussianBlur9" />
+      <feComponentTransfer
+         in="blurOut"
+         result="opacityOut"
+         id="feComponentTransfer11">
+        <feFuncA
+           type="linear"
+           slope="0.5"
+           id="feFuncA13" />
       </feComponentTransfer>
-      <feBlend in="SourceGraphic" in2="opacityOut" mode="normal"></feBlend>
+      <feBlend
+         in="SourceGraphic"
+         in2="opacityOut"
+         mode="normal"
+         id="feBlend15" />
     </filter>
   </defs>
-  <path d="      M 5 18.25      L 50 2.25      L 96 18      L 88.5 77      L 50 98.25      L 12 77.25      Z" fill="black" filter="url(#shadow)" class="outline"></path>
-  <path d="      M 5 18.25      L 50 2.25      L 50 98.25      L 12 77.25      Z" fill="#de3641" class="left"></path>
-  <path d="      M 50 2.25      L 96 18      L 88.5 77      L 50 98.25      Z" fill="#b13138" class="right"></path>
-  <path d="      M 50 13      L 79.25 75.5      L 69.25 75.5      L 63 61.25      L 50 61.25      L 50 52.75      L 59.5 52.75      L 50 33.1      L 42 52.75      L 50 52.75      L 50 61.25      L 38.1 61.25      L 32.5 75.5      L 21.75 75.5      Z" fill="white" class="letter"></path>
+  <path
+     style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.2534436;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     d="m 44.20897,81.109803 c -0.02505,-2.032836 -0.0996,-4.361351 -0.165655,-5.174479 -0.06606,-0.813128 -0.140603,-5.707758 -0.165655,-10.876956 l -0.04555,-9.39853 -6.652893,-9.75e-4 C 33.520125,55.657889 26.962272,55.533099 22.60621,55.380855 l -7.920112,-0.276796 0,-5.635693 0,-5.635693 14.78421,0 14.784209,0 0,-14.573006 0,-14.573005 5.491276,0 5.491279,0 0,14.573005 0,14.573006 14.784211,0 14.784207,0 0,5.702481 0,5.702482 -14.784207,0 -14.784211,0 0,14.784209 0,14.784212 -5.491279,0 -5.491276,0 -0.04555,-3.696053 z"
+     id="path3350"
+     inkscape:connector-curvature="0" />
 </svg>

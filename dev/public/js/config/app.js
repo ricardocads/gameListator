@@ -17,10 +17,10 @@ var gameListator = angular.module('gameListator', ['ngMaterial', 'ngAnimate', 'n
             controller: 'ListController'
         })
 
-        .state('about', {
-            url: '/about',
-            templateUrl: 'partials/about-partial.html',
-            controller: 'AboutController'
+        .state('add', {
+            url: '/add',
+            templateUrl: 'partials/add-partial.html',
+            controller: 'AddController'
         });
     }]);
 

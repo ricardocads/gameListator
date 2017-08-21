@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('AboutController', ['$scope', function($scope) {
+	app.controller('AddController', ['$scope', function($scope) {
 		$scope.game = {
 			id : '',
 			img : '',
@@ -11,14 +11,18 @@
 			notes: ""
 		};
 		$scope.statesCompleted = ('Yes/No').split('/').map(function(state) {
-				return {option: state};
-			});
+			return {option: state};
+		});
 
 		$scope.consoles = ('Mega Drive/Nintendo Switch/Nintendo 64/Playstation 1/Playstation 2/' +
 			'Playstation 3/Playstation 4/Super Nintendo/Xbox 360/'+
 			'Xbox One').split('/').map(function(console) {
 				return {name: console};
 			});
+
+			$scope.cancelAction = function() {
+				window.location.href = '#!/list';
+			};
 
 			$scope.submit = function() {
 
@@ -35,25 +39,18 @@
 
 				if (gameData.completed == "No") gameData.dateCompletion = '';
 
-				// console.log(gameData.completed);
-				// console.log(gameData.dateCompletion.getMonth());
-
-
 				var newGameKey = firebase.database().ref().child('games').push().key;
 
 				gameData.id = newGameKey;
 
 				var updates = {};
 				updates['/games/' + newGameKey] = gameData;
-				// if ($scope.text) {
-				// 	$scope.list.push(this.text);
-				// 	$scope.text = '';
-				// }
-				
 
 				firebase.database().ref().update(updates);
-				window.location = "http://localhost:3000/#!/";
+				window.location.href = '#!/list';
 			};
+
+
 
 		}]);
 app.config(function($compileProvider) {

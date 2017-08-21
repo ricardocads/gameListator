@@ -3,7 +3,7 @@
 	//----------VISUAL SEARCH BAR-------------
 
 	var vm = this;
-
+	var btn = document.querySelector(".md-fab");
 	var header = document.querySelector(".header");
 	var input = document.querySelector(".search-box-input");
 	var close = document.querySelector(".delete");
@@ -11,16 +11,22 @@
 	function hideHeader() {
 		header.classList.remove('show');
 		header.classList.add('hide');
+		btn.classList.remove('show');
+		btn.classList.add('hide');
 	};
 	function showHeader() {
 		if (input.value === '') {
 			header.classList.remove('hide');
 			header.classList.add('show');
+			btn.classList.remove('hide');
+			btn.classList.add('show');
 		}
 	};
 	function showHeaderOnClose() {
 		header.classList.remove('hide');
 		header.classList.add('show');
+		btn.classList.remove('hide');
+		btn.classList.add('show');
 	};
 
 	input.addEventListener("focus", hideHeader);
@@ -30,17 +36,6 @@
 	//----------VISUAL SEARCH BAR-------------
 
 	//----------ENGINE SEARCH BAR-------------
-
-	// $scope.searchWord = '';
-
-	// $scope.filterGame = function(word,item) {
-
-	// 	console.log(item);
-
-	// 	 return function() {
-	// 	 	if ( word == undefined || word.length == 0 || item.title == word ) return true;
- //         }
-	// }
 
 	$scope.customFilter = function (game) {
 		return !$scope.search ||
@@ -79,6 +74,10 @@
 	//------------LISTING GAMES---------------
 
 	//-------------LIST ACTIONS---------------
+
+	$scope.addGame = function() {
+		window.location.href = '#!/add';
+	}	
 
 	$scope.removeGame = function(name) {
 		firebase.database().ref('/games/').child(name).remove();
